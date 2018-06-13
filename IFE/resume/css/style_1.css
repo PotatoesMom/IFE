@@ -1,0 +1,13 @@
+.data-span-part {
+     padding-right: 2em;
+ }
+
+.data-div-capability p,
+.data-div-education p,
+.data-div-project p {
+    white-space: pre-wrap;
+}
+
+br {
+    clear: both;
+}

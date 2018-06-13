@@ -1,0 +1,54 @@
+h1,
+h2,
+p,
+.data-div-title,
+.data-div-contant,
+.data-div-basic,
+.data-div-contact,
+.data-div-capability,
+.data-div-education,
+.data-div-project{
+    margin: 0;
+    padding: 0;
+}
+
+.data-div-title {
+    width: 100%;
+    padding: 20px 30px;
+    background: #656565;
+}
+
+h1 {
+    color: #ffffff;
+}
+
+.data-div-basic,
+.data-div-contact,
+.data-div-capability,
+.data-div-education,
+.data-div-project {
+    height: 100px;
+    border-bottom: 1px solid #cccccc;
+}
+
+h2 {
+    float: left;
+    box-sizing: border-box;
+    height: 100px;
+    padding: 30px 30px;
+    margin-right: 10px;
+    border-bottom: 1px solid #ffffff;
+    text-align: center;
+    background: #cccccc;
+}
+
+h2 + p {
+    padding-top: 15px;
+}
+.data-span-part {
+    padding-right: 2em;
+}
+
+br {
+    clear: both;
+}
