@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>task4_position</title>
+    <style>
+        /*basic style*/
+        * {
+            box-sizing: border-box;
+        }
+
+        .box {
+            padding: 20px;
+            border-radius: 10px;
+            color: #cad5eb;
+            background-color: #002D4B;
+        }
+
+        .left {
+            width: 150px;
+            height: 200px;
+            border: 3px dotted #6E97BF;
+            border-radius: 5px;
+            margin-right: 20px;
+            text-align: center;
+        }
+
+        .right {
+            width: 150px;
+            height: 200px;
+            border: 3px dotted #6E97BF;
+            border-radius: 5px;
+            margin-left: 20px;
+            text-align: center;
+        }
+
+        .center {
+            height: 200px;
+            border: 3px dotted #0FA0CE;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        /*custom style*/
+        .box {
+            position: relative;
+        }
+
+        .left {
+            position: absolute;
+            left: 20px;
+            top: 20px;
+        }
+
+        .right {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+        }
+
+        .center {
+            margin: 0 170px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="left">左侧</div>
+    <div class="center">中间</div>
+    <div class="right">右侧</div>
+
+</div>
+</body>
+</html>
