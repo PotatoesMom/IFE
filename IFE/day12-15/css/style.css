@@ -20,11 +20,17 @@ button {
     background-color: transparent;
 }
 
+::-webkit-scrollbar{
+    display:none;
+}
 
-/* 对两个边栏进行样式设计 */
+
+/* 对左边两个边栏进行样式设计 */
 .primary {
     position: fixed;
     top: 0;
+    overflow-x: hidden;
+    overflow-y: scroll;
     height: 100%;
     width: 100px;
     background-color: #1d2531;
@@ -70,6 +76,8 @@ button {
     position: fixed;
     left: 100px;
     top: 0;
+    overflow-x: hidden;
+    overflow-y: scroll;
     width: 250px;
     height: 100%;
     padding: 5px 30px 20px 0;
@@ -107,6 +115,7 @@ button {
 
 .secondary .part3 {
     border: none;
+    margin-bottom: 100px;
 }
 
 .part3 .active {
@@ -163,10 +172,12 @@ button {
 
 .server_capacity {
     position: fixed;
-    bottom: 20px;
-    left: 125px;
+    bottom: 0;
+    left: 100px;
+    padding: 20px;
     font-size: 14px;
     color: #f8f8f8;
+    background-color: #232d3a;
 }
 
 .server_capacity .title {
@@ -249,7 +260,9 @@ button {
 }
 
 h1 {
+    position: fixed;
     padding: 30px 0 25px 30px;
+    width: 100%;
     border-bottom: 1px solid #e6e9ec;
     font-size: 24px;
     letter-spacing: 1px;
@@ -257,10 +270,15 @@ h1 {
 }
 
 .layout {
+    position: fixed;
+    top: 90px;
+    height: 100%;
     display: flex;
 }
 
 .left {
+    display: flex;
+    flex-flow: column nowrap;
     flex: none;
     width: 400px;
     border-right: 1px solid #e6e9ec;
@@ -269,11 +287,6 @@ h1 {
 .right {
     position: relative;
     flex: auto;
-}
-
-.chats {
-    display: flex;
-    flex-flow: column nowrap;
 }
 
 .search {
@@ -317,13 +330,22 @@ input[type='search']:-ms-input-placeholder { /* Internet Explorer 10+ */
     right: 10px;
 }
 
+.chats {
+    display: flex;
+    flex-flow: column nowrap;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    padding-bottom: 120px;
+    border-top: 1px solid #e7e9ef;
+}
+
 .chat {
     position: relative;
     flex: none;
     height: 130px;
     width: 400px;
     padding: 15px 20px 25px 30px;
-    border-top: 1px solid #e7e9ef;
+    border-bottom: 1px solid #e7e9ef;
     font-size: 14px;
     color: #585d68;
 }
@@ -448,6 +470,10 @@ input[type='search']:-ms-input-placeholder { /* Internet Explorer 10+ */
 .open_chat {
     display: flex;
     flex-flow: column-reverse nowrap;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height: 100%;
+    padding-bottom: 220px;
 }
 
 .message {
@@ -537,17 +563,17 @@ hr{
     height: 55px;
     margin: 0 30px;
     margin-bottom: 20px;
-    border: 1px solid #dfe3e9;
-    border-radius: 5px;
-    font-size: 0;
 }
 
 .new_message textarea {
     position: absolute;
-    left: 55px;
+    left: 53px;
     height: 53px;
-    width: calc(100% - 55px);
-    border: none;
+    width: calc(100% - 53px);
+    border: 1px solid #e7e9ef;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-left: none;
 }
 
 .new_message button {
