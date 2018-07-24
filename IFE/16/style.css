@@ -1,0 +1,96 @@
+body, h1, h2, h3, h4, p, li, td {
+    font: 10px Verdana, Geneva, sans-serif;
+}
+
+body {
+    color: white;
+    background-color: black;
+}
+
+h1 {
+    font-size: 3.2rem;
+    text-shadow: 5px 5px 8px #808080;
+    text-align: center;
+    padding: 65px;
+    padding-top: 90px;
+    padding-bottom: 40px;
+    margin: 0;
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7OjiZSXJCb-YcYOxXIX5cbEs6hthZxfkl1hVd7CuDWq0M2vtPow");
+    background-position: 0;
+    background-repeat: no-repeat;
+}
+
+.first-button {
+    margin-left: 80%;
+    border: dashed 1px #b08da3;
+    color: #f5f5ee;
+    background: transparent;
+}
+
+.content {
+    color: black;
+    background: white;
+    margin: 30px;
+    padding: 30px;
+    border-radius: 20px;
+}
+
+.basic-information, .education-experience, .skills, .project-experience, .self-evaluation {
+    border: 3px solid black;
+    border-radius: 10px;
+    margin-bottom: 40px;
+    margin-top: 30px;
+    padding: 30px;
+}
+
+h2 {
+    font-size: 2rem;
+    text-shadow: 3px 3px 5px #999999;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+h4 {
+    font-size: 1.3rem;
+}
+
+td, p, li {
+    font-size: 1rem;
+}
+
+p {
+    line-height: 1.6;
+    text-indent: 2em;
+}
+
+li {
+    line-height: 2;
+}
+
+a[href^="mailto"] {
+    text-decoration: none;
+    color: black;
+    font-style: italic;
+    background: url("http://img2.3png.com/a1bfa1e31f0b18828cf55e987e736b06113e.png") no-repeat right;
+    background-size: 20px 20px;
+    padding-right: 25px;
+}
+
+a[href^="mailto"]:hover {
+    background: #7fb8de;
+}
+
+table {
+    text-align: center;
+}
+
+td.important {
+    font-weight: bold;
+}
+
+.skills ul {
+    list-style: disc outside ;
+    list-style-image: none;
+}

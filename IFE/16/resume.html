@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+    <script>
+        function hello() {
+            alert("hello everyone");
+        }
+
+        function birth() {
+            document.getElementById("birth").innerHTML = "1991.11.08";
+        }
+
+        function sex() {
+            document.getElementById("sex").innerHTML = "男";
+        }
+
+        function address() {
+            document.getElementById("address").innerHTML = "武汉";
+        }
+
+        function education() {
+            document.getElementById("education").innerHTML = "本科在读";
+        }
+
+        function graduation_school() {
+            console.log("2010/09-至今 武汉纺织大学 软件工程专业（本科)");
+        }
+    </script>
+</head>
+<body>
+<h1>个 人 简 历</h1>
+<button onclick="hello()" class="first-button">请点击</button>
+<div class="content">
+    <div class="basic-information">
+        <h2>基本信息</h2>
+        <table cellpadding="10">
+            <tr>
+                <td>姓名</td>
+                <td>胡**</td>
+            </tr>
+            <tr>
+                <td class="important">求职意向</td>
+                <td class="important">java软件工程师</td>
+            </tr>
+            <tr>
+                <td>出生日期</td>
+                <td id="birth">
+                    <button onclick="birth()">查看</button>
+                </td>
+            </tr>
+            <tr>
+                <td>性别</td>
+                <td id="sex">
+                    <button onclick="sex()">查看</button>
+                </td>
+            </tr>
+            <tr>
+                <td>现居住地</td>
+                <td id="address">
+                    <button onclick="address()">查看</button>
+                </td>
+            </tr>
+            <tr>
+                <td>学历</td>
+                <td id="education">
+                    <button id="aaaa">查看</button>
+                </td>
+            </tr>
+            <tr>
+                <td>电子邮箱</td>
+                <td><a href="mailto:hzh520it@sina.cn">hzh520it@sina.cn</a></td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="education-experience">
+        <h2>教育经历</h2>
+        <h3>毕业学校名称</h3>
+        <p id="graduation-school">
+            <button onclick="graduation_school()">查看</button>
+            在console界面显示
+        </p>
+        <p>2012/9-2013/5 武汉软帝信息科技有限公司 java培训学习</p>
+        <h3>学校课程</h3>
+        <p>操作系统，C程序设计，C++语言程序设计，数据结构，Java面向对象程序设计，数据库基本原理，离散数学，计算机网络，计算机体系结构，软件工程，uml，多媒体等等</p>
+        <h3>获取奖项</h3>
+        <p>2011年11月获得武汉纺织大学授予的“三好学生”荣誉称号</p>
+        <p>2011年12月获得国家励志奖学金</p>
+        <p>2012年11月获得武汉纺织大学校一等奖</p>
+    </div>
+
+    <div class="skills">
+        <h2>技能</h2>
+        <ul>
+            <li>熟练掌握java语言</li>
+            <li>熟练掌握Jsp Servlet 及MVC框架</li>
+            <li>熟练运用SSH三大框架的集成和架构</li>
+            <li>对spring框架也了解 ，其中对ioc 和aop甚是喜欢</li>
+            <li>对于I/O流Socket、servlet、javascript、JDBC、JSP等基础知识能有很好的应用</li>
+            <li>熟练掌握XML技术并且通过jdom,sax对XML进行解析</li>
+            <li>熟练掌握网络技术及TCP/IP网络通信协议等</li>
+            <li>熟练掌握MySql，SQL-server2005，oracle 10g和PL/SQL</li>
+        </ul>
+    </div>
+
+    <div class="project-experience">
+        <h2>项目经验</h2>
+        <section>
+            <h3>项目一：局域网通讯 2012/10-2012/11</h3>
+            <h4>项目描述</h4>
+            <p>采用Socket套接字库网络编程,利用Myeclipse进行开发有界面的工具，实现跟飞秋的及时聊天，运用多线程，和每个人聊天室弹出的不同的对话框，并统计上线的人数和每个人的名称。</p>
+            <h4>责任描述</h4>
+            <p>
+                个项目是1个人完成的。在这个过程中，我主要画出基本的框架，提供了一些建议和想法，完成窗口透明、动态获取主机名、运行发出声音、接受消息发出声音、聊天记录的读写和解析部分协议。在完成的过程中，有不懂的时候，主动的向同事请教，最后成功的实现和飞秋进行及时通信。</p>
+            <h4>项目总结</h4>
+            <p>首先要会熟练的运用socket套接字和java编程，然后解析飞秋的协议，最后成功的和局域网内的飞秋进行及时聊天，并巩固了自己的编程技术。</p>
+            <h4>软件开发工具及技术</h4>
+            <p>java,myeclipse,Win32, socket编程,多线程编程，文件I/O</p>
+            <h3>项目二：京东商城 2013/2-2013/3</h3>
+            <h4>项目描述</h4>
+            <p>
+                利用已有的页面样式和图片信息，自己设计和建立数据库，并导入信息，再利用MVC框架模式，将所有的程序整合，实现查看商品，将商品添加到购物车，清空购物车的商品，购买商品，下订单，查看订单，并且登录检验成功以后，依旧能查看上次购物车中的商品。</p>
+            <h4>项目过程</h4>
+            <p>
+                此项目是一个人完成的，在此过程中，遇到了很多的问题，比如注册时信息的校验，验证码的获取和图片的不同步，是通过AJAX技术来解决的，还有就是在提交商品到购物车中的时候如果不断的刷新页面会出现重复购买的情况，我是通过struts2框架中的防止重复提交的，而且再设计数据库的时候考虑过要不要将购物车中的信息保存在数据中。但是为了下次登录的时候能获取值，就设计到数据中了。</p>
+            <h4>项目总结</h4>
+            <p>首先知道了一个项目的具体流程了，知道大体构架是什么样的了，在这个过程中对使用MVC模式的熟练度提高了，然后主要是让自己学会了在遇到困难的时候如何去学习新的技术和知识来解决问题。</p>
+            <h4>软件开发工具和技术</h4>
+            <p>MyEclipse 8.5 ,MVC开发模式 ，SQL-server2005,AJAX , JSON, Struts2,文件I/O</p>
+            <h3>项目三：QQ邮箱</h3>
+            <h4>项目描述</h4>
+            <p>利用网上资源，自己获取源码，自己调整样式，实现QQ邮箱的所有功能，包括数据库的设计和实现</p>
+            <h4>项目过程</h4>
+            <p>
+                项目过程：该项目是一个人完成的，在此过程中遇到了很多的问题，比如样式没有调好，数据库没有设计好，页面框架没有弄清楚，注册数据验证有小问题啊，如何实现数据可页面的动态绑定啊，还有一些比如日期，地址和写信框中的一些小插件啊，解决方案：首先我是在网上百度相应问题的解决方案，然后问问老师相关的知识，查找相关资料，如果完善程序后还有问题，或者是没有相应，我会写一些测试程序，看看是不是其他的问题。</p>
+            <h3>项目四：cms 2013/4</h3>
+            <p>注：进入创新实验室，跟着老师一起做项目</p>
+            <h4>项目描述</h4>
+            <p>将校园新闻网站整理，告别传统的新闻搜集模式，自动更新新闻，并用爬虫的技术实现实时搜捕热门话题，并实现不仅仅局限雨web技术，还实现手机等移动平台的客户端，并将新闻向客户端推广。</p>
+            <h4>责任描述</h4>
+            <p>这个项目是八个人作为一个团队来实现的，我担任负责人，前期任务是带领团队一起做需求分析，然后分析项目的可行了，并学习相应的知识技能，在中期我主要是实现项目的主体框架设计，如今项目任在继续</p>
+            <h4>项目总结</h4>
+            <p>在作为负责人的过程中学到了很多，比如如何调节队员之间的关系，如何和队员老师交流，知道了如何分配任务比较合理，提高效率，对带领团队有一定的经验</p>
+        </section>
+    </div>
+
+    <div class="self-evaluation">
+        <h2>自我评价</h2>
+        <ol>
+            <li>喜欢电脑编程, 对软件开发有浓厚兴趣。</li>
+            <li>有强烈的团队合作意识，在开发中能提出自己独特的想法。</li>
+            <li>为人性格开朗、热情大方、兴趣广泛、做事有耐心、经得起困难的考验。</li>
+        </ol>
+    </div>
+</div>
+<script>
+    document.getElementById("aaaa").addEventListener("click",education);
+</script>
+</body>
+</html>
