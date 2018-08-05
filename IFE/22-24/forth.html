@@ -1,121 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+var menuArr = [
+    [1, "Area1", -1],
+    [2, "Area2", -1],
+    [3, "Area1-1", 1],
+    [4, "Area1-2", 1],
+    [5, "Area2-1", 2],
+    [6, "Area2-2", 2],
+    [7, "Area1-2-3", 4],
+    [8, "Area2-2-1", 6],
+];
 
-<script>
-    var tree = {
-        "id": 0,
-        "name": "root",
-        "left": {
-            "id": 1,
-            "name": "Simon",
-            "left": {
-                "id": 3,
-                "name": "Carl",
-                "left": {
-                    "id": 7,
-                    "name": "Lee",
-                    "left": {
-                        "id": 11,
-                        "name": "Fate"
-                    }
-                },
-                "right": {
-                    "id": 8,
-                    "name": "Annie",
-                    "left": {
-                        "id": 12,
-                        "name": "Saber"
-                    }
+var obj = {};
+for (var i = 0; i < menuArr.length; i++) {
+    if (menuArr[i][2] < 0) {
+        f2(obj, menuArr[i]);
+    } else {
+        InsertNode(obj, menuArr[i]);
+    }
+}
+
+function f2(x, menuArr) {
+    x[menuArr[0]] = {};
+    x[menuArr[0]].name = menuArr[1];
+}
+
+function InsertNode(x, menuArr) {
+    if (x) {
+        for (let j = 0; j < Object.keys(x).length; j++) {
+            var index = parseInt(Object.keys(x)[j]);
+            if (index === menuArr[2]) {
+                if ("undefined" === typeof (x[Object.keys(x)[j]].subMenu)) {
+                    x[Object.keys(x)[j]].subMenu = {};
+                    f2(x[Object.keys(x)[j]].subMenu, menuArr);
+                } else {
+                    f2(x[Object.keys(x)[j]].subMenu, menuArr);
                 }
-            },
-            "right": {
-                "id": 4,
-                "name": "Tony",
-                "left": {
-                    "id": 9,
-                    "name": "Candy"
-                }
-            }
-        },
-        "right": {
-            "id": 2,
-            "name": "right",
-            "left": {
-                "id": 5,
-                "name": "Carl",
-            },
-            "right": {
-                "id": 6,
-                "name": "Carl",
-                "right": {
-                    "id": 10,
-                    "name": "Kai"
-                }
+            } else {
+                InsertNode(x[Object.keys(x)[j]].subMenu, menuArr);
             }
         }
-    };
-
-
-    // 假设id和name均不会重复，根据输入name找到对应的id
-    function findIdByName(name) {
-        function find(x) {
-            if (x) {
-                if (x.name === name) {
-                    console.log(x);
-                }
-                find(x.left);
-                find(x.right);
-            }
-        }
-        find(tree);
     }
+}
 
-    // 假设id和name均不会重复，根据输入id找到对应的name
-    function findNameById(id) {
-        function find(x) {
-            if (x) {
-                if (x.id === id) {
-                    console.log(x.name);
-                }
-                find(x.left);
-                find(x.right);
-            }
-        }
-        find(tree);
-    }
-
-    // 把这个对象中所有的名字以“前序遍历”的方式全部输出到console中
-    function getListWithDLR(x) {
-        if (x) {
-            console.log(x.name);
-            getListWithDLR(x.left);
-            getListWithDLR(x.right);
-        }
-    }
-
-    // 把这个对象中所有的名字以“中序遍历”的方式全部输出到console中
-    function getListWithLDR(x) {
-        if (x) {
-            getListWithDLR(x.left);
-            console.log(x.name);
-            getListWithDLR(x.right);
-        }
-    }
-
-    // 把这个对象中所有的名字以“后序遍历”的方式全部输出到console中
-    function getListWithLRD(x) {
-        if (x) {
-            getListWithDLR(x.left);
-            getListWithDLR(x.right);
-            console.log(x.name);
-        }
-    }
-
-</script>
-</body>
-</html>
+console.log(obj);
