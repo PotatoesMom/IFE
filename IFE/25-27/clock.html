@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="first-clock"></p>
+<p id="second-clock"></p>
+<script>
+    /* eslint-disable no-console */
+
+    function check(num) {
+        if (10 > num) {
+            return "0" + num;
+        } else {
+            return num;
+        }
+    }
+
+    function getYear() {
+        return new Date().getFullYear();
+    }
+
+    function getMonth() {
+        let month = new Date().getMonth() + 1;
+        month = check(month);
+        return month;
+    }
+
+    function getDay() {
+        let day = new Date().getDate();
+        day = check(day);
+        return day;
+    }
+
+    function getWeekFirst() {
+        let week = "";
+        switch (new Date().getDay()) {
+            case 0:
+                week = "日";
+                break;
+            case 1:
+                week = "一";
+                break;
+            case 2:
+                week = "二";
+                break;
+            case 3:
+                week = "三";
+                break;
+            case 4:
+                week = "四";
+                break;
+            case 5:
+                week = "五";
+                break;
+            case 6:
+                week = "六";
+                break;
+        }
+        return week;
+    }
+
+    function getWeekSecond() {
+        let week = "";
+        switch (new Date().getDay()) {
+            case 0:
+                week = "Sunday";
+                break;
+            case 1:
+                week = "Monday";
+                break;
+            case 2:
+                week = "Tuesday";
+                break;
+            case 3:
+                week = "Wednesday";
+                break;
+            case 4:
+                week = "Thurday";
+                break;
+            case 5:
+                week = "Friday";
+                break;
+            case 6:
+                week = "Saturday";
+                break;
+        }
+        return week;
+    }
+
+    function getHour() {
+        let hour = new Date().getHours();
+        hour = check(hour);
+        return hour;
+    }
+
+    function getMinute() {
+        let minute = new Date().getMinutes();
+        minute = check(minute);
+        return minute;
+    }
+
+    function getSecond() {
+        let second = new Date().getSeconds();
+        second = check(second);
+        return second;
+    }
+
+    function getTime() {
+        let time = "";
+        if (0 <= getHour() && 11 >= getHour()) {
+            time = getHour() + ":" + getMinute() + ":" + getSecond() + " AM";
+        } else {
+            time = (getHour()-12) + ":" + getMinute() + ":" + getSecond() + " PM";
+        }
+        return time;
+    }
+
+    function myFirstClock() {
+        document.querySelector("#first-clock").innerHTML = getYear() + "年" + getMonth() + "月" + getDay() + "日" + "星期" + getWeekFirst() + " " + getHour() + ":" + getMinute() + ":" + getSecond();
+    }
+
+    setInterval(myFirstClock, 1000);
+
+    function mySecondClock() {
+        document.querySelector("#second-clock").innerHTML = getYear() + "-" + getMonth() + "-" + getDay() + " " + getWeekSecond() + " " + getTime();
+    }
+
+    setInterval(mySecondClock, 1000);
+
+
+</script>
+</body>
+</html>
