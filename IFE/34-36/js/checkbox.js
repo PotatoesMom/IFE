@@ -7,7 +7,7 @@ function generateCheckBox(id, parameter) {
         checkbox += "<input type='checkbox' id='checkbox' value='" + parameter[i].value + "'>" + parameter[i].text;
     }
     container.innerHTML = checkbox;
-    container.childNodes[2].checked = true;
+    //container.childNodes[2].checked = true;
     container.addEventListener("click", function (e) {
         if (e.target && e.target.type === "checkbox") {
             let id = e.target.id;
@@ -31,8 +31,23 @@ function generateCheckBox(id, parameter) {
                 }
             }
         }
-        retrieveData();
+        passingData();
     });
+}
+
+function passingData() {
+    let flagRegion = false,//判断地区的所有选项中，是否有被选中的内容
+        flagProduct = false;//判断产品的所有选项中，是否有被选中的内容
+    for (let i = 0; i < document.querySelectorAll("input").length; i++) {
+        if (document.querySelectorAll("input")[i].checked === true && i < 4) {
+            flagRegion = true;
+        } else if (document.querySelectorAll("input")[i].checked === true && i > 3 ) {
+            flagProduct = true;
+        }
+    }
+    if (flagRegion === true && flagProduct === true) {
+        retrieveData();
+    }
 }
 
 generateCheckBox("region-radio-wrapper", [{

@@ -23,6 +23,7 @@ function retrieveData() {
         }
     }
 
+    //将表格中所有数据全部显示在折线图中
     let listAll = [];
     for (let i = 1; i < document.querySelectorAll("tr").length; i++) {
         listAll[i - 1] = [];
@@ -30,40 +31,25 @@ function retrieveData() {
             listAll[i - 1][j - 2] = document.querySelectorAll("tr")[i].childNodes[j].innerHTML;
         }
     }
+    drawLineChart(listAll);
+    drawHistogram(listAll);
 
-    document.querySelector("#product-radio-wrapper").addEventListener("click", function (){
-        let listAll = [];
-        for (let i = 1; i < document.querySelectorAll("tr").length; i++) {
-            listAll[i - 1] = [];
-            for (let j = 2; j < document.querySelectorAll("tr")[i].childNodes.length; j++) {
-                listAll[i - 1][j - 2] = document.querySelectorAll("tr")[i].childNodes[j].innerHTML;
-            }
-        }
-        drawLineChart(listAll);
-        drawHistogram(listAll);
-    });
-
-    document.querySelector("#region-radio-wrapper").addEventListener("click", function (){
-        let listAll = [];
-        for (let i = 1; i < document.querySelectorAll("tr").length; i++) {
-            listAll[i - 1] = [];
-            for (let j = 2; j < document.querySelectorAll("tr")[i].childNodes.length; j++) {
-                listAll[i - 1][j - 2] = document.querySelectorAll("tr")[i].childNodes[j].innerHTML;
-            }
-        }
-        drawLineChart(listAll);
-        drawHistogram(listAll);
-    });
-
-    let list = [[]];
+    //显示鼠标停留行的数据
+    let list = [[]],
+        number = 0;
     document.querySelector("#table").addEventListener("mouseover", function (e) {
         if (e.target && e.target.tagName.toUpperCase() === "TD") {
             for (let i = 2, j = 0; i < e.target.parentNode.childNodes.length; i++) {
                 list[0][j] = e.target.parentNode.childNodes[i].innerHTML;
                 j++;
             }
+            for (let i = 0; i < document.querySelectorAll("tbody")[0].childNodes.length; i++) {
+                if (e.target.parentNode === document.querySelectorAll("tbody")[0].childNodes[i]) {
+                    number = i;
+                }
+            }
             drawHistogram(list);
-            drawLineChart(list);
+            drawLineChart(list, number);
         }
     });
 
